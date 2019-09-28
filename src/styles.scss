@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.carousel-control-next-icon {
+    background-image: url("./assets/images/arrow-pointing-to-right.svg");
+}
+.carousel-control-prev-icon {
+    background-image: url("./assets/images/arrow-pointing-to-left.svg");
+}
