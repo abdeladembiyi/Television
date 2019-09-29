@@ -6,7 +6,7 @@ import { TelevisionComponent } from './components/television/television.componen
 
 const routes: Routes = [
   { path: '', component: TelevisionComponent, pathMatch: 'full' },
-  { path: 'admin', component: RegleComponent}
+  { path: 'admin', component: RegleComponent }
 ];
 
 @NgModule({

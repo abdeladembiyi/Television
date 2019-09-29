@@ -27,8 +27,8 @@ export class TelevisionComponent implements OnInit {
       this.imageServer = res;
       console.log(this.imageLength);
     });
-
-    this.http.get(`https://api.darksky.net/forecast/893a8e2d39076c8c087ed06a392e75d5/33.478,-7.4322`)
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
+    this.http.get(`${proxy}https://api.darksky.net/forecast/893a8e2d39076c8c087ed06a392e75d5/33.478,-7.4322?units=si`)
       .subscribe(res => console.log('Weather: ', res));
   }
 
