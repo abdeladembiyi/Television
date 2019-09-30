@@ -13,9 +13,13 @@ export class TelevisionComponent implements OnInit {
   imageServer;
   imageLength = 0;
   imageToShow = [];
+  summary = '';
+  icon = '';
+  contentSummary = '';
+  temperature = '';
   constructor(private regleService: RegleService, private http: HttpClient) { }
 
- 
+
   ngOnInit() {
     this.regleService.getRules().subscribe((res: any[]) => {
       for (let i = 0; i < res.length; i++) {
@@ -28,8 +32,15 @@ export class TelevisionComponent implements OnInit {
       console.log(this.imageLength);
     });
     const proxy = 'https://cors-anywhere.herokuapp.com/';
-    this.http.get(`${proxy}https://api.darksky.net/forecast/893a8e2d39076c8c087ed06a392e75d5/33.478,-7.4322?units=si`)
-      .subscribe(res => console.log('Weather: ', res));
+    this.http.get(`${proxy}https://api.darksky.net/forecast/893a8e2d39076c8c087ed06a392e75d5/33.478,-7.4322?units=si&lang=fr`)
+      .subscribe((res: any) => {
+        console.log('Weather: ', res);
+        this.icon = res.currently.icon;
+        this.temperature = res.currently.temperature;
+        this.summary = res.currently.summary;
+        this.contentSummary = res.daily.summary;
+        console.log('Summary: ', this.summary);
+      });
   }
 
   createImagePath(serverPath: string) {

@@ -1,24 +1,89 @@
-<div class="myContainer">
+<div class="container-fluid">
     <!-- <div class="col-12">
         <h2 class="text-center">Cher Sous-traitant</h2>
         <h5 class="text-center"> pour le bon déroulement de votre visite , Veuillez respécter nos <span class="myregle">
                 régles</span></h5>
     </div> -->
-    <div class="col-md-12">
-        <ngb-carousel *ngIf="imageToShow" style=" margin: auto; width:80%; float: right;">
-            <ng-template ngbSlide *ngFor="let image of imageToShow ; let i = index">
+    <div class="row mt-3 no-gutters">
+        <div class="col-lg-4 col-md-3">
+            <div class="row">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Méteo</mat-card-title>
+                        <mat-card-subtitle>Casablanca</mat-card-subtitle>
+                    </mat-card-header>
+                    <div>
+                        <div class="row">
+                            <div class="col-7" style="margin-right: 0%; padding-right: 0%;">
+                                <sc-skycons [weather]="icon" [color]="'black'"></sc-skycons>
+                            </div>
+                            <div class="col-5 align-self-center">
+                                <div>Temperature: {{ temperature }} °C</div>
+                                <div>Sommaire: {{ summary }}</div>
+                            </div>
+                        </div>
 
-                <div class="carousel-item active" *ngIf="image.show === true">
-                    <img class="d-block w-100 img-carousel " [src]="createImagePath(image.image)"
-                        alt="Random first slide">
-
-                    <div class="carousel-caption">
-                        <h3>{{image.nom}}</h3>
-                        <p>{{image.description}}</p>
                     </div>
-                </div>
-            </ng-template>
-        </ngb-carousel>
+                    <mat-card-content>
+                        <p>
+                            {{contentSummary}}
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <div class="row mt-3">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Méteo</mat-card-title>
+                        <mat-card-subtitle>Casablanca</mat-card-subtitle>
+                    </mat-card-header>
+                    <div>
+                        <div class="row">
+                            <div class="col-7" style="margin-right: 0%; padding-right: 0%;">
+                                <sc-skycons [weather]="icon" [color]="'black'"></sc-skycons>
+                            </div>
+                            <div class="col-2 align-self-center">
+                                <span>{{summary}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <mat-card-content>
+                        <p>
+                            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from
+                            Japan.
+                            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
+                            originally
+                            bred for hunting.
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+        </div>
+        <div class="col-lg-8 col-md-9">
+
+            <ngb-carousel *ngIf="imageToShow">
+                <ng-template ngbSlide *ngFor="let image of imageToShow ; let i = index">
+
+                    <div class="carousel-item active" *ngIf="image.show === true">
+                        <img class="d-block w-100 img-carousel " [src]="createImagePath(image.image)"
+                            alt="Random first slide">
+
+                        <!-- <div class="carousel-caption">
+                                    <h3>{{image.nom}}</h3>
+                                    <p>{{image.description}}</p>
+                                </div> -->
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+
+
+        </div>
     </div>
+
 
 </div>

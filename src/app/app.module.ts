@@ -13,6 +13,7 @@ import { EditRegleComponent } from './components/regle/edit-regle/edit-regle.com
 import { ListRegleComponent } from './components/regle/list-regle/list-regle.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SkyconsModule } from 'ngx-skycons';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegleComponent,
     EditRegleComponent,
     AddRegleComponent,
-    ListRegleComponent  
+    ListRegleComponent
   ],
-  entryComponents:[AddRegleComponent, EditRegleComponent],
+  entryComponents: [AddRegleComponent, EditRegleComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -32,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     NgbModule,
     NgbCarouselModule,
-    FormsModule
+    FormsModule,
+    SkyconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
