@@ -13,6 +13,7 @@ import { EditRegleComponent } from './components/regle/edit-regle/edit-regle.com
 import { ListRegleComponent } from './components/regle/list-regle/list-regle.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AccidentComponent } from './accident/accident.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegleComponent,
     EditRegleComponent,
     AddRegleComponent,
-    ListRegleComponent  
+    ListRegleComponent,
+    AccidentComponent  
   ],
   entryComponents:[AddRegleComponent, EditRegleComponent],
   imports: [

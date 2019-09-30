@@ -13,6 +13,7 @@ export class TelevisionComponent implements OnInit {
   imageServer;
   imageLength = 0;
   imageToShow = [];
+  date = '10-20-2019';
   constructor(private regleService: RegleService, private http: HttpClient) { }
 
  

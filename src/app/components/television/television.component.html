@@ -5,7 +5,7 @@
                 régles</span></h5>
     </div> -->
     <div class="col-md-12">
-        <ngb-carousel *ngIf="imageToShow" style=" margin: auto; width:80%; float: right;">
+        <ngb-carousel *ngIf="imageToShow" style=" margin: auto; width:70%; float: right;">
             <ng-template ngbSlide *ngFor="let image of imageToShow ; let i = index">
 
                 <div class="carousel-item active" *ngIf="image.show === true">
@@ -20,5 +20,10 @@
             </ng-template>
         </ngb-carousel>
     </div>
-
+    <div class="col-md-4">
+        <h6>Date de demarrage {{date}} </h6>
+        <h5>Nombre des jours de travail </h5>
+        <h6>Date dernier accident </h6>
+        <h6>Nombre des jours sans accident </h6>
+    </div>
 </div>

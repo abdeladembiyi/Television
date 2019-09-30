@@ -1,0 +1,26 @@
+
+<h1 class="col-md-10 justify-content-center">Accident</h1>
+<mat-card class="example-card d-flex form-row justify-content-center">
+    <form [formGroup]="accidentForm" (ngSubmit)="onFormSubmit(accidentForm)">
+        <mat-form-field>
+            <input matInput placeholder="Accident" formControlName="libelle">
+        </mat-form-field>
+        <mat-form-field>
+            <input type="date" matInput placeholder="Date Accident" formControlName="dateAccident">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Nombre de mort" formControlName="nombreMort">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Nombre de blessure" formControlName="nombreBlessure">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Laissez une description" formControlName="description"
+                name="description"></textarea>
+        </mat-form-field>
+        <div  class="d-flex form-row justify-content-end">
+        <button mat-raised-button>Ajouter</button>
+    </div>
+
+    </form>
+</mat-card>
