@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccidentService } from '../core/services/accident/accident.service';
+import { AccidentService } from '../../core/services/accident/accident.service';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 
 @Component({

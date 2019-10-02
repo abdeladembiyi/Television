@@ -14,4 +14,13 @@ export class AccidentService {
   addAccident(data){
     return this.http.post(`${API}`,data);
   }
+  getAccidentCount(){
+    return this.http.get(`${API}/count`);
+  }
+  getAccidentLast(){
+    return this.http.get(`${API}/last`);
+  }
+  getCount(){
+    return this.http.get(`${API}/dif`);
+  }
 }
