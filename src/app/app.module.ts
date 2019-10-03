@@ -15,6 +15,10 @@ import { CoreModule } from './core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccidentComponent } from './components/accident/accident.component';
 import { NgMarqueeModule } from 'ng-marquee';
+import { MessageComponent } from './components/message/message.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { NavbarComponent } from './components/admin/navbar/navbar.component';
+import { TvComponent } from './components/tv/tv.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { NgMarqueeModule } from 'ng-marquee';
     EditRegleComponent,
     AddRegleComponent,
     ListRegleComponent,
-    AccidentComponent
+    AccidentComponent,
+    MessageComponent,
+    AdminComponent,
+    NavbarComponent,
+    TvComponent
   ],
   entryComponents:[AddRegleComponent, EditRegleComponent],
   imports: [

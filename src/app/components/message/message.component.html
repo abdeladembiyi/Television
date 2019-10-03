@@ -1,0 +1,19 @@
+<div class="example-container">
+    <form [formGroup]="formMessage" (ngSubmit)="onFormSubmit(formMessage)">
+    <mat-form-field>
+      <textarea matInput placeholder="Message a afficher" formControleName="libelle"></textarea>
+    </mat-form-field> 
+    <mat-form-field>
+        <input matInput placeholder="Titre de message" formControleName="titre">
+    </mat-form-field>
+    <mat-form-field>
+            <input matInput [matDatepicker]="dp" placeholder="Date de Message" formControlName="dateMessage">
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp></mat-datepicker>
+    </mat-form-field>
+    <div>
+        <mat-checkbox class="ml-2 mt-2" formControleName="show" name="show">Afficher le message</mat-checkbox>
+    </div>
+    <button mat-stroked-button color="primary">ajouter Message</button>
+    </form>
+  </div>
