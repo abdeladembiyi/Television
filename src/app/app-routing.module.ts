@@ -6,6 +6,7 @@ import { AccidentComponent } from './components/accident/accident.component';
 import { MessageComponent } from './components/message/message.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TvComponent } from './components/tv/tv.component';
+import { ReglecmsComponent } from './components/reglecms/reglecms.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
     path: 'admin', component:AdminComponent, children:[
       { path: '',component:RegleComponent,outlet: 'admin'},
       { path: 'regles',component:RegleComponent,outlet:'admin'},
+      { path: 'reglesCms',component:ReglecmsComponent,outlet:'admin'},
       { path: 'accidents',component:AccidentComponent,outlet:'admin'},
       { path: 'messages',component:MessageComponent,outlet:'admin'}
     ]

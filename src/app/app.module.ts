@@ -19,6 +19,10 @@ import { MessageComponent } from './components/message/message.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { NavbarComponent } from './components/admin/navbar/navbar.component';
 import { TvComponent } from './components/tv/tv.component';
+import { ReglecmsComponent } from './components/reglecms/reglecms.component';
+import { AddReglecmsComponent } from './components/reglecms/add-reglecms/add-reglecms.component';
+import { EditReglecmsComponent } from './components/reglecms/edit-reglecms/edit-reglecms.component';
+import { ListReglecmsComponent } from './components/reglecms/list-reglecms/list-reglecms.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +36,18 @@ import { TvComponent } from './components/tv/tv.component';
     MessageComponent,
     AdminComponent,
     NavbarComponent,
-    TvComponent
+    TvComponent,
+    ReglecmsComponent,
+    AddReglecmsComponent,
+    EditReglecmsComponent,
+    ListReglecmsComponent
   ],
-  entryComponents:[AddRegleComponent, EditRegleComponent],
+  entryComponents:[
+      AddRegleComponent,
+      EditRegleComponent,
+      AddReglecmsComponent,
+      EditReglecmsComponent
+    ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

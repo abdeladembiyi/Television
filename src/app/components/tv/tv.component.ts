@@ -15,7 +15,7 @@ export class TvComponent implements OnInit {
   constructor(private regleCmsService: RegleCmsService) { }
 
   ngOnInit() {
-    this.regleCmsService.getReglesCms().subscribe((res: any[]) => {
+    this.regleCmsService.getRules().subscribe((res: any[]) => {
       for (let i = 0; i < res.length; i++) {
         if (res[i].show) {
           this.imageToShow.push(res[i]);

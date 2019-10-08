@@ -1,12 +1,121 @@
-<div class="img-carousel">
-
-        <ngb-carousel *ngIf="imageToShow">
-            <ng-template ngbSlide *ngFor="let image of imageToShow ; let i = index">
-
-                <div class="carousel-item active" *ngIf="image.show === true">
-                    <img class="d-block w-100 img-carousel " [src]="createImagePath(image.image)"
-                        alt="Random first slide">
+<div class="container-fluid">
+    <div class=" col-md-12">
+        <div class="row mt-3">
+            <div class="  col-md-4">
+                <div class="row">
+                        <div class="col-md-3">
+                                <mat-card class="example-card">
+                                    <mat-card-header class="row justify-content-center">
+                                        <mat-card-title>
+                                            <h6><span class="badge badge-primary">VOIE-4-ممر</span></h6>
+                                        </mat-card-title>
+                                    </mat-card-header> 
+                                    <mat-card-content>
+                                        <!-- <img src="./assets/images/tourniquet.png"  class="rounded" style="width: 70px;"> -->
+                                        <img src="./assets/images/ok.png" class="rounded" style="width: 40px;">
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
+                    <div class="col-md-3">
+                        <mat-card class="example-card">
+                            <mat-card-header class="row justify-content-center">
+                                <mat-card-title>
+                                        <h6><span class="badge badge-danger">VOIE-3-ممر</span></h6>
+                                </mat-card-title>
+                            </mat-card-header> 
+                            <mat-card-content>
+                                <!-- <img src="./assets/images/tourniquet.png"  class="rounded" style="width: 70px;"> -->
+                                <img src="./assets/images/ok.png"  class="rounded" style="width: 40px;">
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-card class="example-card">
+                            <mat-card-header class="row justify-content-center">
+                                <mat-card-title>
+                                    <h6><span class="badge badge-success">VOIE-2-ممر</span></h6>
+                                </mat-card-title>
+                            </mat-card-header> 
+                            <mat-card-content>
+                                <!-- <img src="./assets/images/tourniquet.png"  class="rounded" style="width: 70px;"> -->
+                                <img src="./assets/images/ok.png"  class="rounded" style="width: 40px;">
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div class="col-md-3">
+                            <mat-card class="example-card">
+                                <mat-card-header class="row justify-content-center">
+                                    <mat-card-title>
+                                            <h6><span class="badge badge-warning">VOIE-1-ممر</span></h6>
+                                    </mat-card-title>
+                                </mat-card-header> 
+                                <mat-card-content>
+                                    <!-- <img src="./assets/images/tourniquet.png"  class="rounded" style="width: 70px;"> -->
+                                    <img src="./assets/images/ok.png"  class="rounded" style="width: 40px;">
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                </div> <br> 
+                <div class="row">
+                        <div class="col-md-3">
+                            <mat-card class="example-card">
+                                <mat-card-header class="row justify-content-center">
+                                    <mat-card-title>
+                                            <h6><span class="badge badge-success">VOIE-5-ممر</span></h6>
+                                    </mat-card-title>
+                                </mat-card-header> 
+                                <mat-card-content>
+                                    <!-- <img src="./assets/images/tourniquet.png"  class="rounded" style="width: 70px;"> -->
+                                    <img src="./assets/images/ok.png"  class="rounded" style="width: 40px;">
+                                </mat-card-content>
+                            </mat-card>
+                        </div><br>
+                        <!-- <div class="col-md-3">
+                            <mat-card class="example-card">
+                                <mat-card-header class="row justify-content-center">
+                                    <mat-card-title>
+                                        <h6><span class="badge badge-danger">VOIE-6-ممر</span></h6>
+                                    </mat-card-title>
+                                </mat-card-header> 
+                                <mat-card-content>
+                                    <img src="./assets/images/tourniquet.png"  class="rounded" style="width: 70px;">
+                                    <img src="./assets/images/x.png" class="rounded" style="width: 40px;">
+                                </mat-card-content>
+                            </mat-card>
+                        </div> -->
+                </div> <br>
+                <div class="row">
+                <div class="col-md-3">
+                        <mat-card class="example-card">
+                            <mat-card-header class="row justify-content-center">
+                                <mat-card-title>
+                                    <h6><span class="badge badge-danger">VOIE-6-ممر</span></h6>
+                                </mat-card-title>
+                            </mat-card-header> 
+                            <mat-card-content>
+                                <!-- <img src="./assets/images/tourniquet.png"  class="rounded" style="width: 70px;"> -->
+                                <img src="./assets/images/x.png" class="rounded" style="width: 40px;">
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
                 </div>
-            </ng-template>
-        </ngb-carousel>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8">
+                <ngb-carousel *ngIf="imageToShow">
+                    <ng-template ngbSlide *ngFor="let image of imageToShow ; let i = index">
+                        <div class="carousel-item active" *ngIf="image.show === true">
+                            <img class="d-block w-100 img-carousel " [src]="createImagePath(image.image)"
+                                alt="Random first slide">
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-1" style="background-color: burlywood;">
+    <ng-marquee>
+        <mark style="background-color: burlywood;"> HOTEL ROYAL MANSOUR  </mark>
+    </ng-marquee>
 </div>
