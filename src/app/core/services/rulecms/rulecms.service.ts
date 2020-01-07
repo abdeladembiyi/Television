@@ -5,14 +5,14 @@ import { tap, catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { Regle } from 'src/app/shared/regle/regle';
 
+const API = constants.api + 'regleCms/';
 
-const API=constants.api +'regleCms/'
 @Injectable({
   providedIn: 'root'
 })
-export class RegleCmsService {
+export class rulecmsService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   addRule(data) {
     return this.http.post(`${API}`, data)

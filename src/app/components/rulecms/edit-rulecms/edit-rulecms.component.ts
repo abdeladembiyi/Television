@@ -1,17 +1,16 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { FormErrorStateMatcher } from 'src/app/core/handlers/form-error-state-matcher';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DataService } from 'src/app/shared/service/data.service';
 import { take } from 'rxjs/operators';
-import { RegleCmsService } from 'src/app/core/services/regleCms/regle-cms.service';
-
+import { rulecmsService } from 'src/app/core/services/rulecms/rulecms.service';
 @Component({
-  selector: 'app-edit-reglecms',
-  templateUrl: './edit-reglecms.component.html',
-  styleUrls: ['./edit-reglecms.component.scss']
+  selector: 'app-edit-rulecms',
+  templateUrl: './edit-rulecms.component.html',
+  styleUrls: ['./edit-rulecms.component.scss']
 })
-export class EditReglecmsComponent implements OnInit {
+export class EditRulecmsComponent implements OnInit {
 
   editRegleForm: FormGroup;
   fileToUpload;
@@ -21,8 +20,8 @@ export class EditReglecmsComponent implements OnInit {
   previewUrl: any = null;
 
   constructor(private formBuilder: FormBuilder,
-              private regleCmsService: RegleCmsService,
-              private dialogRef: MatDialogRef<EditReglecmsComponent>,
+              private rulecmsService: rulecmsService,
+              private dialogRef: MatDialogRef<EditRulecmsComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
               private ruleDataService: DataService) { }
 
@@ -48,8 +47,8 @@ export class EditReglecmsComponent implements OnInit {
       form.value.image = this.data.image;
     }
 
-    this.regleCmsService.updateRule(this.data.id, form.value).subscribe(async res => {
-      await this.regleCmsService.getRules().pipe(take(1)).toPromise().then(data => this.ruleDataService.changeRuleDataSource(data));
+    this.rulecmsService.updateRule(this.data.id, form.value).subscribe(async res => {
+      await this.rulecmsService.getRules().pipe(take(1)).toPromise().then(data => this.ruleDataService.changeRuleDataSource(data));
     });
     this.editRegleForm.reset();
     this.dialogRef.close();
@@ -88,5 +87,4 @@ export class EditReglecmsComponent implements OnInit {
       this.ruleDataService.changeRuleDataSource(res);
     });
   }*/
-
 }

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RegleCmsService } from './regle-cms.service';
+import { PointeuseService } from './pointeuse.service';
 
-describe('RegleCmsService', () => {
+describe('PointeuseService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RegleCmsService = TestBed.get(RegleCmsService);
+    const service: PointeuseService = TestBed.get(PointeuseService);
     expect(service).toBeTruthy();
   });
 });

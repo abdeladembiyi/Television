@@ -4,14 +4,14 @@ import { FormErrorStateMatcher } from 'src/app/core/handlers/form-error-state-ma
 import { MatDialogRef } from '@angular/material';
 import { DataService } from 'src/app/shared/service/data.service';
 import { take } from 'rxjs/operators';
-import { RegleCmsService } from 'src/app/core/services/regleCms/regle-cms.service';
-
+import {  rulecmsService } from 'src/app/core/services/rulecms/rulecms.service';
 @Component({
-  selector: 'app-add-reglecms',
-  templateUrl: './add-reglecms.component.html',
-  styleUrls: ['./add-reglecms.component.scss']
+  selector: 'app-add-rulecms',
+  templateUrl: './add-rulecms.component.html',
+  styleUrls: ['./add-rulecms.component.scss']
 })
-export class AddReglecmsComponent implements OnInit {
+export class AddRulecmsComponent implements OnInit {
+
   regleForm: FormGroup;
   fileToUpload;
   matcher = new FormErrorStateMatcher();
@@ -20,8 +20,8 @@ export class AddReglecmsComponent implements OnInit {
   previewUrl: any = null;
 
   constructor(private formBuilder: FormBuilder,
-              private regleCmsService: RegleCmsService,
-              private dialogRef: MatDialogRef<AddReglecmsComponent>,
+              private ruleService: rulecmsService,
+              private dialogRef: MatDialogRef<AddRulecmsComponent>,
               private ruleDataService: DataService) { }
 
   ngOnInit() {
@@ -46,10 +46,10 @@ export class AddReglecmsComponent implements OnInit {
       show: (form.value.show) ? 1 : 0
     };
 
-    this.regleCmsService.addRule(data).subscribe(async res => {
+    this.ruleService.addRule(data).subscribe(async res => {
       console.log('add regle: ', res);
       // tslint:disable-next-line:no-shadowed-variable
-      await this.regleCmsService.getRules().pipe(take(1)).toPromise().then(data => this.ruleDataService.changeRuleDataSource(data));
+      await this.ruleService.getRules().pipe(take(1)).toPromise().then(data => this.ruleDataService.changeRuleDataSource(data));
     });
     this.regleForm.reset();
     this.close();
@@ -89,4 +89,5 @@ export class AddReglecmsComponent implements OnInit {
   close() {
     this.dialogRef.close();
   }
+
 }

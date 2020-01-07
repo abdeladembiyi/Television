@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddReglecmsComponent } from './add-reglecms.component';
+import { ListRulecmsComponent } from './list-rulecms.component';
 
-describe('AddReglecmsComponent', () => {
-  let component: AddReglecmsComponent;
-  let fixture: ComponentFixture<AddReglecmsComponent>;
+describe('ListRulecmsComponent', () => {
+  let component: ListRulecmsComponent;
+  let fixture: ComponentFixture<ListRulecmsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddReglecmsComponent ]
+      declarations: [ ListRulecmsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddReglecmsComponent);
+    fixture = TestBed.createComponent(ListRulecmsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

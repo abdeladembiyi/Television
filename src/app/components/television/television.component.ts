@@ -23,6 +23,7 @@ export class TelevisionComponent implements OnInit {
   lastAccident;
   dateDemarrage;
   jourTravail;
+  nbrSansAcc;
   constructor(
     private regleService: RegleService, 
     private http: HttpClient,
@@ -32,6 +33,7 @@ export class TelevisionComponent implements OnInit {
 
 
   ngOnInit() {
+    this.getDayWithoutAccident();
     this.getNombreJour();
     this.getDateDemarrage();
     this.getAccidentCount();
@@ -90,6 +92,14 @@ export class TelevisionComponent implements OnInit {
     this.demarrageService.getNombreJours().subscribe(
       res=>{
         this.jourTravail = res;
+      }
+    )
+  }
+  getDayWithoutAccident(){
+    this.accidentService.getCount().subscribe(
+      res =>{
+        console.log('jour',res);
+        this.nbrSansAcc = res;
       }
     )
   }

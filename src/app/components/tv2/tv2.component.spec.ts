@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReglecmsComponent } from './reglecms.component';
+import { Tv2Component } from './tv2.component';
 
-describe('ReglecmsComponent', () => {
-  let component: ReglecmsComponent;
-  let fixture: ComponentFixture<ReglecmsComponent>;
+describe('Tv2Component', () => {
+  let component: Tv2Component;
+  let fixture: ComponentFixture<Tv2Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReglecmsComponent ]
+      declarations: [ Tv2Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReglecmsComponent);
+    fixture = TestBed.createComponent(Tv2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

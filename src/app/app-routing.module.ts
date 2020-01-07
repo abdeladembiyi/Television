@@ -6,17 +6,21 @@ import { AccidentComponent } from './components/accident/accident.component';
 import { MessageComponent } from './components/message/message.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { TvComponent } from './components/tv/tv.component';
-import { ReglecmsComponent } from './components/reglecms/reglecms.component';
+import { RulecmsComponent } from './components/rulecms/rulecms.component';
+import { Tv2Component } from './components/tv2/tv2.component';
+import { PointeuseComponent } from './components/pointeuse/pointeuse.component';
 
 
 const routes: Routes = [
   { path: '', component: TelevisionComponent, pathMatch: 'full' },
   { path: 'tv',component: TvComponent,pathMatch:'full'},
+  { path: 'tv2',component: Tv2Component,pathMatch:'full'},
+  { path: 'pointeuse',component: PointeuseComponent,pathMatch:'full'},
   {
     path: 'admin', component:AdminComponent, children:[
       { path: '',component:RegleComponent,outlet: 'admin'},
       { path: 'regles',component:RegleComponent,outlet:'admin'},
-      { path: 'reglesCms',component:ReglecmsComponent,outlet:'admin'},
+      { path: 'reglesCms',component:RulecmsComponent,outlet:'admin'},
       { path: 'accidents',component:AccidentComponent,outlet:'admin'},
       { path: 'messages',component:MessageComponent,outlet:'admin'}
     ]

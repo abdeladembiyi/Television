@@ -11,10 +11,11 @@
                     <mat-card class="example-card">
                         <mat-card-header class="row justify-content-center">
                             <mat-card-title>
-                                <h3><span class="badge badge-success">Méteo</span></h3>
+                                <h3><span class="badge badge-primary">HOTEL ROYAL MANSOUR</span></h3>
+                                <h5><span class="badge badge-success">Méteo</span></h5>
                             </mat-card-title>
                             <mat-card-subtitle>
-                                <h4><span class="badge badge-light">Casablanca</span></h4>
+                                <h6><span class="badge badge-light">Casablanca</span></h6>
                             </mat-card-subtitle>
                         </mat-card-header>
                         <div>
@@ -23,21 +24,22 @@
                                     <sc-skycons [weather]="icon" [color]="'rgb(66, 245, 230)'"></sc-skycons>
                                 </div>
                                 <div class="col-7 align-self-center">
-                                    <div>Temperature: {{ temperature }} °C</div>
-                                    <div>Sommaire: {{ summary }}</div>
+                                    <div style="font-size: 10px">Temperature: {{ temperature }} °C</div>
+                                    <div style="font-size: 10px">Sommaire: {{ summary }}</div>
                                 </div>
                             </div>
                         </div>
                         <mat-card-content>
-                            <p>
+                            <p style="font-size: 12px">
                                 {{contentSummary}}
                             </p>
-                            <h4><span class="badge badge-primary">HOTEL ROYAL MANSOUR</span></h4>
                             <h6 class="pb-2">Date de demarrage :<span
                                 class="badge badge-info">{{dateDemarrage | date : "dd-MM-yyyy"}}</span></h6>
                         <h6 class="pb-2">Nombre des jours de travail :<span
                                 class="badge badge-warning">{{jourTravail}}</span></h6>
                         <h6 class="pb-2">Nombre d'accident :<span class="badge badge-danger">{{nrAccident}}</span>
+                        </h6>
+                        <h6 class="pb-2">Nombre des jours sans d'accident :<span class="badge badge-danger">{{nbrSansAcc}}</span>
                         </h6>
                         <h6 class="pb-2">Date de dernier accident :<span
                                 class="badge badge-secondary">{{lastAccident | date : "dd-MM-yyyy"}}</span></h6>

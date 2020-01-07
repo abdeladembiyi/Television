@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditReglecmsComponent } from './edit-reglecms.component';
+import { RulecmsComponent } from './rulecms.component';
 
-describe('EditReglecmsComponent', () => {
-  let component: EditReglecmsComponent;
-  let fixture: ComponentFixture<EditReglecmsComponent>;
+describe('RulecmsComponent', () => {
+  let component: RulecmsComponent;
+  let fixture: ComponentFixture<RulecmsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditReglecmsComponent ]
+      declarations: [ RulecmsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditReglecmsComponent);
+    fixture = TestBed.createComponent(RulecmsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

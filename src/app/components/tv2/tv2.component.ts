@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { constants } from 'src/app/shared/constants';
 import { rulecmsService } from 'src/app/core/services/rulecms/rulecms.service';
+import { constants } from 'src/app/shared/constants';
 import { PointeuseService } from 'src/app/core/services/pointeuse/pointeuse.service';
 
 @Component({
-  selector: 'app-tv',
-  templateUrl: './tv.component.html',
-  styleUrls: ['./tv.component.scss']
+  selector: 'app-tv2',
+  templateUrl: './tv2.component.html',
+  styleUrls: ['./tv2.component.scss']
 })
-export class TvComponent implements OnInit {
+export class Tv2Component implements OnInit {
+
   imageServer;
   imageLength = 0;
   imageToShow = [];
-  data;
-  P002;
-  P004;
-  P006;
-  P008;
-  P010;
-  P012;
+  P001;
+  P003;
+  P005;
+  P007;
+  P009;
+  P011;
   interval: any;
   constructor(private regleCmsService: rulecmsService,private pointeuseService:PointeuseService) { }
 
   ngOnInit() {
-    this.getPointeuseEtat();
+    this.getPointeuseEtat()
     this.interval = setInterval(() => { 
       this.getPointeuseEtat(); 
   }, 5000);
@@ -42,15 +42,15 @@ export class TvComponent implements OnInit {
     return `${constants.serverImg}${serverPath}`;
     // return `http://localhost:4772/${serverPath}`;
   }
-
   getPointeuseEtat(){
     this.pointeuseService.getPointeuseEtat().subscribe((res : any[])=>{
-      this.P002 = res[1];
-      this.P004 = res[3];
-      this.P006 = res[5];
-      this.P008 = res[7];
-      this.P010 = res[9];
-      this.P012 = res[11];
+      this.P001 = res[0];
+      this.P003 = res[2];
+      this.P005 = res[4];
+      this.P007 = res[6];
+      this.P009 = res[8];
+      this.P011 = res[10];
     })
   }
+
 }
