@@ -4,7 +4,7 @@
         <h5 class="text-center"> pour le bon déroulement de votre visite , Veuillez respécter nos <span class="myregle">
                 régles</span></h5>
     </div> -->
-    <div class=" col-md-12">
+    <!--
         <div class="row mt-3">
             <div class="  col-md-4">
                 <div class="row">
@@ -46,8 +46,8 @@
                         </mat-card-content>
                     </mat-card>
                 </div>
-
-                <!-- <div class="row mt-3">
+            -->
+    <!-- <div class="row mt-3">
                     <mat-card class="example-card w-75">
                         <mat-card-header >
                             <div mat-card-avatar class="example-header-image"></div>
@@ -80,7 +80,7 @@
                         </mat-card-content>
                     </mat-card>
                 </div> -->
-
+    <!--
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8">
 
@@ -95,7 +95,8 @@
                                     <h3>{{image.nom}}</h3>
                                     <p>{{image.description}}</p>
                                 </div> -->
-                        </div>
+
+    <!-- </div>
                     </ng-template>
                 </ngb-carousel>
 
@@ -112,4 +113,106 @@
     <ng-marquee>
         <mark style="background-color: burlywood;"> HOTEL ROYAL MANSOUR  </mark>
     </ng-marquee>
+</div> -->
+
+
+
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+
+
+    <div class="onoffswitch3">
+        <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
+        <label class="onoffswitch3-label" for="myonoffswitch3" style="margin-left: calc(50% - 50vw);
+    width: 100vw;">
+            <span class="onoffswitch3-inner">
+                <span class="onoffswitch3-active">
+                    <marquee class="scroll-text" direction="left" style="margin-top: 0.8vw;    color: black;">HOTEL ROYAL MANSOUR <span class="glyphicon glyphicon-forward"></span>
+                        HOTEL ROYAL MANSOUR <span
+                            class="glyphicon glyphicon-forward"></span>HOTEL ROYAL MANSOUR</marquee>
+                    <span class="onoffswitch3-switch" style="padding-top: 0.8vw;">ROYAL MANSOUR </span>
+                </span>
+
+            </span>
+        </label>
+
+
+
+    </div>
+
+    <div class="onoffswitch4">
+        <input type="checkbox" name="onoffswitch3" class="onoffswitch4-checkbox" id="myonoffswitch4" checked>
+        <label class="onoffswitch4-label" for="myonoffswitch4" style="margin-left: calc(50% - 50vw);
+    width: 100vw;">
+            <span class="onoffswitch4-inner">
+                <span class="onoffswitch4-active">
+                    <marquee class="scroll-text" direction="right" style="margin-top: 0.8vw;    color: black;">
+                        فندق روايال منصور <span
+                            class="glyphicon glyphicon-forward"></span> فندق روايال منصور<span class="glyphicon glyphicon-forward"></span>                         فندق روايال منصور</marquee>
+                    <span class="onoffswitch4-switch" style="padding-top: 0.8vw;margin-left: 90%;">ROYAL MANSOUR </span>
+                </span>
+
+            </span>
+        </label>
+    </div>
+
+
+    <div class="elfsight-app-16221569-59e5-475b-94b3-f9d464f0a589"></div>
+
+    <div class="card rounded-lg" style="width: 28.8rem;
+    right: 15px;
+    top: -13px;
+    background-color: #e4e4e4;border: none;height: 389px;">
+        <div class="card-body">
+            <br>
+            <h6 class="card-subtitle mb-2 text-muted" style="color: #b5b5b5;">Date de demarrage :</h6>
+            <h5 class="card-title" style="color: black;">{{dateDemarrage | date : "dd-MM-yyyy"}}</h5>
+            <br>
+            <h6 class="card-subtitle mb-2 text-muted" style="color: #b5b5b5;">Nombre des jours de travail :</h6>
+            <h5 class="card-title" style="color: black;">{{jourTravail}}</h5>
+            <br>
+            <h6 class="card-subtitle mb-2 text-muted" style="color: #b5b5b5;">Nombre d'accident :</h6>
+            <h5 class="card-title" style="color: black;">{{nbrSansAcc}}</h5>
+            <br>
+            <h6 class="card-subtitle mb-2 text-muted" style="color: #b5b5b5;">Date de dernier accident :</h6>
+            <h5 class="card-title" style="color: black;">{{lastAccident | date : "dd-MM-yyyy"}}</h5>
+            <br>
+            <br>
+            <h6 class="card-subtitle mb-2 text-muted" style="color: #b5b5b5;"> {{contentSummary}}</h6>
+        </div>
+    </div>
+    
+
+    <ngb-carousel *ngIf="imageToShow" style="display: block;
+    top: -767px;
+    width: 1251px;
+    left: 273px;">
+        <ng-template ngbSlide *ngFor="let image of imageToShow ; let i = index">
+
+            <div class="carousel-item active" *ngIf="image.show === true">
+                <img class="d-block w-100 img-carousel " [src]="createImagePath(image.image)" alt="Random first slide">
+
+
+            </div>
+        </ng-template>
+    </ngb-carousel>
+    <img class="fit-picture"
+    src="../../../assets/images/CMS.png"
+    alt="logo" style="width: 8%;
+    position: absolute;
+    top: 25px;
+    left: 1370px;">
+
+
 </div>
+

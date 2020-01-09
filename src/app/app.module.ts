@@ -25,6 +25,8 @@ import { AddRulecmsComponent } from './components/rulecms/add-rulecms/add-rulecm
 import { ListRulecmsComponent } from './components/rulecms/list-rulecms/list-rulecms.component';
 import { Tv2Component } from './components/tv2/tv2.component';
 import { PointeuseComponent } from './components/pointeuse/pointeuse.component';
+import {WeatherwidgetComponent} from './components/weatherwidget/weatherwidget.component'
+import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
 
 @NgModule({
   declarations: [
@@ -44,13 +46,16 @@ import { PointeuseComponent } from './components/pointeuse/pointeuse.component';
     AddRulecmsComponent,
     ListRulecmsComponent,
     Tv2Component,
-    PointeuseComponent
+    PointeuseComponent,
+    WeatherwidgetComponent,
+    
   ],
   entryComponents:[
       AddRegleComponent,
       EditRegleComponent,
       AddRulecmsComponent,
-      EditRulecmsComponent
+      EditRulecmsComponent,
+     
     ],
   imports: [
     BrowserModule,
@@ -62,7 +67,8 @@ import { PointeuseComponent } from './components/pointeuse/pointeuse.component';
     NgbCarouselModule,
     FormsModule,
     SkyconsModule,
-    NgMarqueeModule
+    NgMarqueeModule,
+    AngularWeatherWidgetModule
   ],
   providers: [],
   bootstrap: [AppComponent]

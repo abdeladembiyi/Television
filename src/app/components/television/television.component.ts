@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { RegleService } from 'src/app/core/services/regle/regle.service';
 import { constants } from 'src/app/shared/constants';
 import { HttpClient } from '@angular/common/http';
@@ -28,9 +28,10 @@ export class TelevisionComponent implements OnInit {
     private regleService: RegleService, 
     private http: HttpClient,
     private accidentService:AccidentService,
-    private demarrageService:DemarrageService
+    private demarrageService:DemarrageService,
+    private elementRef:ElementRef
     ) { }
-
+    
 
   ngOnInit() {
     this.getDayWithoutAccident();
@@ -59,7 +60,6 @@ export class TelevisionComponent implements OnInit {
         console.log('Summary: ', this.summary);
       });
   }
-
   createImagePath(serverPath: string) {
     return `${constants.serverImg}${serverPath}`;
     // return `http://localhost:4772/${serverPath}`;
@@ -80,6 +80,13 @@ export class TelevisionComponent implements OnInit {
       }
     )
   }
+
+
+  
+
+
+
+
   getDateDemarrage(){
     this.demarrageService.getDateDemarrage().subscribe(
       res=>{
@@ -103,4 +110,5 @@ export class TelevisionComponent implements OnInit {
       }
     )
   }
+
 }
