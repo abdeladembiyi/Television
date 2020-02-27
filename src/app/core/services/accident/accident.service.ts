@@ -23,4 +23,10 @@ export class AccidentService {
   getCount(){
     return this.http.get(`${API}/dif`);
   }
+  getAccident(){
+    return this.http.get(`${API}`);
+  }
+  deleteAccident(id) {
+    return this.http.delete(`${API}`+ "/" + id);
+  }
 }

@@ -1,13 +1,18 @@
-<app-list-regle></app-list-regle>
+
+<div class="row justify-content-center">
+  <h1>Lites des regles</h1>
+</div>
+
+
 
 <div class="w-90">
   <div class="search-div">
     <button mat-raised-button (click)="onCreate()">
       <i class="fas fa-plus mr-2"></i>
-      <!--<mat-icon>add</mat-icon>-->Create
+      <!--<mat-icon>add</mat-icon>-->Crée
     </button>
     <mat-form-field class="ml-2 w-50 search-form-field" floatLabel="never">
-      <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+      <input matInput [(ngModel)]="searchKey" placeholder="Rechercher" autocomplete="off" (keyup)="applyFilter()">
       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
         <i class="fas fa-times"></i>
         <!--<mat-icon>close</mat-icon>-->
@@ -17,10 +22,6 @@
 
   <div class="mat-elevation-z8">
     <mat-table [dataSource]="listRegle" matSort>
-      <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
-      </ng-container>
       <ng-container matColumnDef="numOrdre">
         <mat-header-cell *matHeaderCellDef mat-sort-header>No Ordre</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.numOrdre}}</mat-cell>
@@ -42,9 +43,7 @@
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
         <mat-cell *matCellDef="let row">
-          <button class="form-row justify-content-center" mat-icon-button (click)="onEdit(row)">
-            <mat-icon>Modifier</mat-icon>
-          </button>
+          <button (click)="onEdit(row)" class="btn btn-primary btn-sm">Modifier</button>
           <!-- <button mat-icon-button color="warn" (click)="onDelete(row.$key)">
             <mat-icon>delete_outline</mat-icon>
           </button> -->
@@ -56,3 +55,5 @@
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
   </div>
 </div>
+
+<app-list-regle></app-list-regle>

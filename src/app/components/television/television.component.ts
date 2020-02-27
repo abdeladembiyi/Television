@@ -4,6 +4,7 @@ import { constants } from 'src/app/shared/constants';
 import { HttpClient } from '@angular/common/http';
 import { AccidentService } from 'src/app/core/services/accident/accident.service';
 import { DemarrageService } from 'src/app/core/services/demarrage/demarrage.service';
+import { MessageService } from 'src/app/core/services/message/message.service';
 
 @Component({
   selector: 'app-television',
@@ -11,8 +12,9 @@ import { DemarrageService } from 'src/app/core/services/demarrage/demarrage.serv
   styleUrls: ['./television.component.scss']
 })
 export class TelevisionComponent implements OnInit {
-
+  readonly logo: string = constants.img_logo;
   imageServer;
+  Messages : any;
   imageLength = 0;
   imageToShow = [];
   summary = '';
@@ -29,11 +31,16 @@ export class TelevisionComponent implements OnInit {
     private http: HttpClient,
     private accidentService:AccidentService,
     private demarrageService:DemarrageService,
-    private elementRef:ElementRef
+    private elementRef:ElementRef,
+    private MessageService : MessageService
     ) { }
     
 
   ngOnInit() {
+    this.MessageService.getAllMessage().subscribe(res => {
+      this.Messages = res;
+      console.log(this.Messages);
+    });
     this.getDayWithoutAccident();
     this.getNombreJour();
     this.getDateDemarrage();
@@ -67,7 +74,7 @@ export class TelevisionComponent implements OnInit {
   getAccidentCount(){
     this.accidentService.getAccidentCount().subscribe(
       res=>{
-        console.log(res);
+        console.log('Nombre dacc',res);
         this.nrAccident = res;
       }
     )

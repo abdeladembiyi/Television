@@ -2,6 +2,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+
 .carousel-control-next-icon {
     background-image: url("./assets/images/arrow-pointing-to-right.svg");
 }
@@ -24,4 +25,29 @@ mat-card.w-75 {
 
     top: -4px;
     right: 13px;
+    max-width: 100000px !important;
+}
+.carousel-control-prev-icon{
+    display: none;
+}
+.carousel-control-next-icon{
+    display: none;
+}
+.carousel-indicators{
+    display: none;
+}
+body {
+    overflow: hidden;    
+  }
+
+  #clock_block_cb5e26ea54615a4 p{
+
+    color:#22c0e8 !important;
+    text-align: center !important;
+    margin-left :-28% !important;
+}  
+.DPDCd{
+    float: right !important;
+    margin-top: -6% !important;
+    margin-right: 35% !important;
 }

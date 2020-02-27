@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { constants } from 'src/app/shared/constants';
 import { rulecmsService } from 'src/app/core/services/rulecms/rulecms.service';
 import { PointeuseService } from 'src/app/core/services/pointeuse/pointeuse.service';
+import { MessageService } from 'src/app/core/services/message/message.service';
 
 @Component({
   selector: 'app-tv',
@@ -9,6 +10,8 @@ import { PointeuseService } from 'src/app/core/services/pointeuse/pointeuse.serv
   styleUrls: ['./tv.component.scss']
 })
 export class TvComponent implements OnInit {
+  readonly logo: string = constants.img_logo;
+  Messages : any;
   imageServer;
   imageLength = 0;
   imageToShow = [];
@@ -20,9 +23,14 @@ export class TvComponent implements OnInit {
   P010;
   P012;
   interval: any;
-  constructor(private regleCmsService: rulecmsService,private pointeuseService:PointeuseService) { }
+  constructor(private regleCmsService: rulecmsService,private pointeuseService:PointeuseService, private MessageService : MessageService) { }
 
   ngOnInit() {
+
+    this.MessageService.getAllMessage().subscribe(res => {
+      this.Messages = res;
+      console.log(this.Messages);
+    });
     this.getPointeuseEtat();
     this.interval = setInterval(() => { 
       this.getPointeuseEtat(); 

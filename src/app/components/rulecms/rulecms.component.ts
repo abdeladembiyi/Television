@@ -15,7 +15,7 @@ import { EditRulecmsComponent } from './edit-rulecms/edit-rulecms.component';
 export class RulecmsComponent implements OnInit {
 
   listRegle = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'nom', 'numOrdre', 'description', 'image', 'actions'];
+  displayedColumns: string[] = [ 'nom', 'numOrdre', 'description', 'image', 'actions'];
   searchKey: string;
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;

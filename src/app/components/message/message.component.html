@@ -1,19 +1,141 @@
+<div class="row justify-content-center">
+  <h1>Messages</h1>
+</div>
+
 <div class="example-container">
-    <form [formGroup]="formMessage" (ngSubmit)="onFormSubmit(formMessage)">
-    <mat-form-field>
-      <textarea matInput placeholder="Message a afficher" formControleName="libelle"></textarea>
-    </mat-form-field> 
-    <mat-form-field>
-        <input matInput placeholder="Titre de message" formControleName="titre">
-    </mat-form-field>
-    <mat-form-field>
-            <input matInput [matDatepicker]="dp" placeholder="Date de Message" formControlName="dateMessage">
-            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-            <mat-datepicker #dp></mat-datepicker>
-    </mat-form-field>
-    <div>
-        <mat-checkbox class="ml-2 mt-2" formControleName="show" name="show">Afficher le message</mat-checkbox>
+  <br>
+  <form [formGroup]="formMessage" (submit)="onFormSubmit(formMessage)" style="text-align: center;">
+    <div class="row">
+      <div class="col">
+        <mat-form-field style="width: 50vh;">
+          <input type="text" matInput formControlName="libelle" placeholder="Message a afficher" style="width: 80vh;">
+        </mat-form-field>
+
+      </div>
+      <div class="col">
+        <mat-form-field style="width: 50vh;">
+          <input type="text" matInput formControlName="messagearab" placeholder="Message Arab" style="width: 80vh;">
+        </mat-form-field>
+      </div>
+
+
     </div>
-    <button mat-stroked-button color="primary">ajouter Message</button>
-    </form>
+    <div class="row">
+      <div class="col">
+
+        <mat-form-field style="width: 50vh;">
+          <input type="text" matInput formControlName="titre" placeholder="Titre de message" style="width: 80vh;">
+        </mat-form-field>
+
+      </div>
+      <div class="col">
+
+        <mat-form-field style="width: 50vh;">
+
+          <input matInput [matDatepicker]="dp" placeholder="Date de Message" formControlName="dateMessage"
+            style="width: 80vh;">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+
+    </div>
+
+
+
+    <div style="margin-top: 2%; ">
+      <!-- <mat-checkbox class="ml-2 mt-2" formControleName="show" name="show">Afficher le message</mat-checkbox> -->
+
+      <mat-checkbox [value]="falseValue" formControlName="show" (change)="checkboxChange($event.source, $event.checked)"
+        style="margin-left: 12%;
+        float: left;">
+        Afficher le message
+      </mat-checkbox>
+
+
+    </div>
+
+
+    <button mat-stroked-button color="primary" style="    margin-left: 44%; ">Ajouter Message</button>
+
+
+    <br>
+    <br>
+
+  </form>
+
+</div>
+
+
+
+<div class="container">
+
+
+
+
+  <div class="mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+      <!-- Position Column -->
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="libelle">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> libelle </mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let element"> {{element.libelle}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="titre">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> titre </mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let element"> {{element.titre}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="dateMessage">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> dateMessage
+        </mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let element"> {{element.dateMessage}} </mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="messagearab">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> messagearab
+        </mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let element"> {{element.messagearab}} </mat-cell>
+      </ng-container>
+
+      <!-- action Column delete/update -->
+      <ng-container matColumnDef="Action">
+        <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header>Action</mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let element">
+
+          <button (click)="delete(element.id)" class="btn btn-outline-danger btn-sm">Supprimer</button>
+        </mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="etat">
+        <mat-header-cell mat-header-cell *matHeaderCellDef> Etat </mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let element">
+          <!-- Déblockage -->
+          <ng-container *ngIf="element.show === false">
+            <button class="btn btn-danger btn-sm" color="danger" (click)="blocked(element, 'lock')"
+              style="margin-right: 8px">
+              inactive
+            </button>
+          </ng-container>
+          <!-- Blockage -->
+          <ng-container *ngIf="element.show === true">
+            <button class="btn btn-success btn-sm" (click)="blocked(element, 'unlock')" style="margin-right: 7px">
+              active
+            </button>
+          </ng-container>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'show': row.show, 'hide': !row.show}">
+      </mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
   </div>
+
+</div>

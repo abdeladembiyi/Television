@@ -16,7 +16,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 export class RegleComponent implements OnInit {
 
   listRegle = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'nom', 'numOrdre', 'description', 'image', 'actions'];
+  displayedColumns: string[] = [ 'nom', 'numOrdre', 'description', 'image', 'actions'];
   searchKey: string;
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;

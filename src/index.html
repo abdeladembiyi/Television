@@ -5,12 +5,29 @@
   <title>CmsTelevision</title>
   <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="/path/to/material-icons/iconfont/material-icons.css">
 </head>
-<body style="    overflow: hidden;">
+<body>
   <app-root></app-root>
 </body>
 </html>
 
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<!-- <script src="https://apps.elfsight.com/p/platform.js" defer></script> -->
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+  document.getElementsByTagName('body')[0].style.zoom = .75;
+  </script>
+  <script>
+    var s, t; s = document.createElement("script"); s.type = "text/javascript";
+    s.src = "//cdn.dayspedia.com/js/dwidget.min.vef6161ef.js";
+    t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+    s.onload = function() {
+        window.dwidget = new window.DigitClock();
+        window.dwidget.init("dayspedia_widget_2009f3eb00bfd4c0");
+    };
+    </script>
+  
+  <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+  

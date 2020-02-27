@@ -27,6 +27,7 @@ import { Tv2Component } from './components/tv2/tv2.component';
 import { PointeuseComponent } from './components/pointeuse/pointeuse.component';
 import {WeatherwidgetComponent} from './components/weatherwidget/weatherwidget.component'
 import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
+import { TeletestComponent } from './components/teletest/teletest.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
     Tv2Component,
     PointeuseComponent,
     WeatherwidgetComponent,
+    TeletestComponent,
     
   ],
   entryComponents:[

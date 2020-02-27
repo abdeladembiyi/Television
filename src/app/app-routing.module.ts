@@ -9,6 +9,7 @@ import { TvComponent } from './components/tv/tv.component';
 import { RulecmsComponent } from './components/rulecms/rulecms.component';
 import { Tv2Component } from './components/tv2/tv2.component';
 import { PointeuseComponent } from './components/pointeuse/pointeuse.component';
+import { TeletestComponent } from './components/teletest/teletest.component';
 
 
 const routes: Routes = [

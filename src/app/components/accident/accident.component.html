@@ -1,26 +1,187 @@
-<div class="row justify-content-center"><h1>Accident</h1></div>
+<div class="row justify-content-center">
+    <h1>Accidents</h1>
+</div>
+
+<div class="example-container">
+    <br>
+    <form [formGroup]="accidentForm" (submit)="onFormSubmit(accidentForm)" style="text-align: center;">
+        <div class="row">
+            <div class="col">
+                <mat-form-field style="width: 50vh;">
+                    <input type="text" matInput formControlName="libelle" placeholder="Accident" style="width: 80vh;">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+                <mat-form-field style="width: 50vh;">
+                    <input type="number" matInput formControlName="nombreMort" placeholder="Nombre de mort"
+                        style="width: 80vh;">
+                </mat-form-field>
+            </div>
 
 
-    <form [formGroup]="accidentForm" (ngSubmit)="onFormSubmit(accidentForm)">
-        
-        <mat-form-field>
-            <input matInput placeholder="Accident" formControlName="libelle">
-        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
-        <mat-form-field>
-            <input type="date" matInput placeholder="Date Accident" formControlName="dateAccident">
-        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
-        <mat-form-field>
-            <input matInput placeholder="Nombre de mort" formControlName="nombreMort">
-        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
-        <mat-form-field>
-            <input matInput placeholder="Nombre de blessure" formControlName="nombreBlessure">
-        </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
-        <mat-form-field>
-            <textarea matInput placeholder="Laissez une description" formControlName="description"
-                name="description"></textarea>
-        </mat-form-field>
-        <div  class="d-flex form-row justify-content-end">
-        <button mat-raised-button>Ajouter</button>
-    </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col">
+
+                <mat-form-field style="width: 50vh;">
+                    <input type="text" matInput formControlName="description" placeholder="Déscription de l'accident"
+                        style="width: 80vh;">
+                </mat-form-field>
+
+            </div>
+            <div class="col">
+
+                <mat-form-field style="width: 50vh;">
+
+                    <input matInput [matDatepicker]="dp" placeholder="Date de l'accident" formControlName="dateAccident"
+                        style="width: 80vh;">
+                    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+
+                    <mat-datepicker #dp></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+
+
+        </div>
+
+         
+        <div class="row">
+            <mat-form-field style="width: 50vh;margin-left: 12.7%;">
+                <input type="number" matInput formControlName="nombreBlessure" placeholder="Nombre de blessure"
+                    style="width: 80vh;">
+            </mat-form-field>
+        </div>   
+
+        <button mat-stroked-button color="primary" style="    margin-left: 71%; ">Ajouter</button>
+
+
+        <br>
+        <br>
 
     </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+<div class="row justify-content-center">
+    <h1>Accident</h1>
+</div>
+
+
+<form [formGroup]="accidentForm" (ngSubmit)="onFormSubmit(accidentForm)" style="text-align: center;">
+
+    <mat-form-field>
+        <input matInput placeholder="Accident" formControlName="libelle">
+    </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+        <input type="date" matInput placeholder="Date Accident" formControlName="dateAccident">
+    </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+        <input matInput placeholder="Nombre de mort" formControlName="nombreMort">
+    </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-form-field>
+        <input matInput placeholder="Nombre de blessure" formControlName="nombreBlessure">
+    </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-form-field style="    width: 16%;">
+        <textarea matInput placeholder="Laissez une description" formControlName="description"
+            name="description"></textarea>
+    </mat-form-field>
+    <div class="d-flex form-row justify-content-end">
+        <button mat-raised-button style="margin-right: 19%;">Ajouter</button>
+    </div>
+
+</form> -->
+
+
+<br>
+<br>
+
+
+
+<div class="container">
+
+    <div class="mat-elevation-z8">
+        <mat-table [dataSource]="dataSource" matSort>
+            <!-- Position Column -->
+
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="libelle">
+                <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> Libelle
+                </mat-header-cell>
+                <mat-cell mat-cell *matCellDef="let element"> {{element.libelle}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="dateAccident">
+                <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> Date d'accident
+                </mat-header-cell>
+                <mat-cell mat-cell *matCellDef="let element"> {{element.dateAccident}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nombreMort">
+                <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> Nombre de mort
+                </mat-header-cell>
+                <mat-cell mat-cell *matCellDef="let element"> {{element.nombreMort}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="nombreBlessure">
+                <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> Nombre de blessure
+                </mat-header-cell>
+                <mat-cell mat-cell *matCellDef="let element"> {{element.nombreBlessure}} </mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="description">
+                <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header> Description
+                </mat-header-cell>
+                <mat-cell mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+            </ng-container>
+
+            <!-- action Column delete/update -->
+            <ng-container matColumnDef="Action">
+                <mat-header-cell mat-header-cell *matHeaderCellDef mat-sort-header mat-sort-header>Action
+                </mat-header-cell>
+                <mat-cell mat-cell *matCellDef="let element">
+
+                    <button (click)="delete(element.id)" class="btn btn-outline-danger btn-sm">Supprimer</button>
+                </mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'show': row.show, 'hide': !row.show}">
+            </mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+    </div>
+
+</div>

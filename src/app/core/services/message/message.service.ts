@@ -17,4 +17,10 @@ export class MessageService {
   AjouterMessage(data){
     return this.http.post(`${API}`,data);
   }
+  deleteMessage(id) {
+    return this.http.delete(`${API}`+ "/" + id);
+  }
+  updateMessage(id, data) {
+    return this.http.put(`${API}/${id}`, data);
+  }
 }
